@@ -49,10 +49,7 @@ const [loading, setLoading] = useState(false);
       }
 
       const result = await dispatch(factCheckNews(payload));
-      
-      if (result && result.success) {
-        setFactData(result.data);
-      }
+      setFactData(result.data);
     } catch (error) {
       console.error("Fact check error:", error);
       setError("Failed to perform fact check. Please try again.");

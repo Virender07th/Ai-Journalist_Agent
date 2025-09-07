@@ -73,13 +73,9 @@ const BiasDetection = () => {
       clearInterval(progressTimer);
       setProgress(100);
       setAnalysisStage("Analysis complete!");
-
-      // Extract bias data from API response
-      if (response.success && response.data && response.data.biasData) {
-        setBiasData(response.data.biasData);
-      } else {
-        throw new Error("Invalid response format");
-      }
+      setBiasData(response.data.biasData);
+      console.log("bias data " , response.data.biasData);
+      
 
     } catch (err) {
       clearInterval(progressTimer);
